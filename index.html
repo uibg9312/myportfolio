@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gamaliel Uribe Bernal | Especialista en Operaciones y Tecnología</title>
+    <title data-key="page_title">Gamaliel Uribe Bernal | Operations & Technology Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -65,6 +65,11 @@
         .timeline-item:nth-child(even) .timeline-dot {
             left: -0.5rem;
         }
+        /* Style for active language button */
+        .lang-active {
+            color: #8B5CF6 !important;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -76,11 +81,16 @@
                 G<span class="text-violet-500">.</span>
             </a>
             <div class="hidden md:flex space-x-8 items-center">
-                <a href="#about" class="text-gray-600 hover:text-violet-500 transition-colors">Sobre mí</a>
-                <a href="#projects" class="text-gray-600 hover:text-violet-500 transition-colors">Proyectos</a>
-                <a href="#experience" class="text-gray-600 hover:text-violet-500 transition-colors">Experiencia</a>
-                <a href="#education" class="text-gray-600 hover:text-violet-500 transition-colors">Educación</a>
-                <a href="#contact" class="bg-violet-500 text-white px-4 py-2 rounded-md hover:bg-violet-600 transition-colors shadow-lg shadow-violet-500/20">Contacto</a>
+                <a href="#about" class="text-gray-600 hover:text-violet-500 transition-colors" data-key="nav_about">About Me</a>
+                <a href="#projects" class="text-gray-600 hover:text-violet-500 transition-colors" data-key="nav_projects">Projects</a>
+                <a href="#experience" class="text-gray-600 hover:text-violet-500 transition-colors" data-key="nav_experience">Experience</a>
+                <a href="#education" class="text-gray-600 hover:text-violet-500 transition-colors" data-key="nav_education">Education</a>
+                <a href="#contact" class="bg-violet-500 text-white px-4 py-2 rounded-md hover:bg-violet-600 transition-colors shadow-lg shadow-violet-500/20" data-key="nav_contact">Contact</a>
+                <div class="flex items-center space-x-2 border-l border-gray-300 pl-6 ml-4">
+                    <button id="lang-en" class="lang-btn text-sm font-semibold">EN</button>
+                    <span class="text-gray-300">|</span>
+                    <button id="lang-es" class="lang-btn text-sm font-semibold text-gray-500 hover:text-violet-500">ES</button>
+                </div>
             </div>
             <button id="mobile-menu-button" class="md:hidden">
                 <i data-lucide="menu" class="text-gray-800"></i>
@@ -88,11 +98,16 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#about" class="block py-2 text-gray-600 hover:text-violet-500">Sobre mí</a>
-            <a href="#projects" class="block py-2 text-gray-600 hover:text-violet-500">Proyectos</a>
-            <a href="#experience" class="block py-2 text-gray-600 hover:text-violet-500">Experiencia</a>
-            <a href="#education" class="block py-2 text-gray-600 hover:text-violet-500">Educación</a>
-            <a href="#contact" class="block mt-2 bg-violet-500 text-white px-4 py-2 rounded-md text-center hover:bg-violet-600">Contacto</a>
+            <a href="#about" class="block py-2 text-gray-600 hover:text-violet-500" data-key="nav_about_mobile">About Me</a>
+            <a href="#projects" class="block py-2 text-gray-600 hover:text-violet-500" data-key="nav_projects_mobile">Projects</a>
+            <a href="#experience" class="block py-2 text-gray-600 hover:text-violet-500" data-key="nav_experience_mobile">Experience</a>
+            <a href="#education" class="block py-2 text-gray-600 hover:text-violet-500" data-key="nav_education_mobile">Education</a>
+            <a href="#contact" class="block mt-2 bg-violet-500 text-white px-4 py-2 rounded-md text-center hover:bg-violet-600" data-key="nav_contact_mobile">Contact</a>
+            <div class="flex items-center justify-center space-x-4 pt-4 mt-4 border-t border-gray-200">
+                <button id="lang-en-mobile" class="lang-btn text-sm font-semibold">EN</button>
+                <span class="text-gray-400">|</span>
+                <button id="lang-es-mobile" class="lang-btn text-sm font-semibold text-gray-500 hover:text-violet-500">ES</button>
+            </div>
         </div>
     </header>
 
@@ -108,12 +123,12 @@
                 <p class="text-xl md:text-2xl text-gray-700 mb-8">
                     <span id="typing-text" class="font-semibold text-violet-600"></span><span class="typing-cursor"></span>
                 </p>
-                <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12">
-                    Conecto operaciones, procesos y tecnología para crear soluciones eficientes. Mi viaje desde la construcción hasta el desarrollo de software me ha dado una perspectiva única para resolver problemas complejos.
+                <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12" data-key="hero_intro">
+                    I connect operations, processes, and technology to create efficient solutions. My journey from construction to software development has given me a unique perspective on solving complex problems.
                 </p>
                 <div class="flex justify-center space-x-4">
-                    <a href="#projects" class="bg-violet-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-violet-600 transition-transform hover:scale-105 shadow-xl shadow-violet-500/30">
-                        Ver mis Proyectos
+                    <a href="#projects" class="bg-violet-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-violet-600 transition-transform hover:scale-105 shadow-xl shadow-violet-500/30" data-key="hero_cta_projects">
+                        View My Projects
                     </a>
                     <a href="https://www.linkedin.com/in/gamaliel-uribe-bernal" target="_blank" class="bg-white text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-transform hover:scale-105 border border-gray-200 shadow-lg">
                         LinkedIn
@@ -127,22 +142,21 @@
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-5 gap-12 items-center">
                     <div class="md:col-span-2">
-                        <!-- Imagen de perfil -->
-                        <img src="perfil.jpeg" alt="Retrato de Gamaliel Uribe Bernal" class="rounded-2xl shadow-2xl w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
+                         <img src="https://placehold.co/600x800/8B5CF6/FFFFFF?text=Gama" alt="Portrait of Gamaliel Uribe Bernal" class="rounded-2xl shadow-2xl w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x800/CCCCCC/FFFFFF?text=Image+Not+Found';">
                     </div>
                     <div class="md:col-span-3">
-                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Una fusión de Lógica y Creatividad</h2>
-                        <p class="text-gray-600 mb-6 text-lg">
-                            Mi carrera es una historia de evolución. Empecé en la construcción, donde aprendí el valor del trabajo duro y la resolución de problemas en el mundo real. Esa base práctica, combinada con casi **5 años de experiencia en servicio al cliente**, me impulsó hacia el sector tecnológico, donde he optimizado operaciones, gestionado incidentes críticos y garantizado la calidad en empresas como TCS y Helpware.
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4" data-key="about_title">A Fusion of Logic and Creativity</h2>
+                        <p class="text-gray-600 mb-6 text-lg" data-key="about_p1">
+                            My career is a story of evolution. I started in construction, where I learned the value of hard work and real-world problem-solving. That practical foundation, combined with nearly **5 years of customer service experience**, propelled me into the tech sector, where I have optimized operations, managed critical incidents, and ensured quality at companies like TCS and Helpware.
                         </p>
-                        <p class="text-gray-600 mb-6 text-lg">
-                            Actualmente, como estudiante de Tecnologías de la Información, estoy canalizando toda esa experiencia en el desarrollo de software y la automatización de procesos. Me apasiona crear herramientas que no solo funcionen, sino que hagan la vida de las personas más fácil. Además de programar, soy un apasionado del canto (barítono) y la pintura.
+                        <p class="text-gray-600 mb-6 text-lg" data-key="about_p2">
+                            Currently, as an Information Technologies student, I am channeling all that experience into software development and process automation. I am passionate about creating tools that not only work but make people's lives easier. Besides coding, I am a passionate singer (baritone) and painter.
                         </p>
                         <div class="flex flex-wrap gap-4 mt-8">
-                            <span class="bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-sm font-medium">Automatización</span>
-                            <span class="bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-sm font-medium">Resolución de Problemas</span>
-                            <span class="bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-sm font-medium">Optimización de Procesos</span>
-                            <span class="bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-sm font-medium">Desarrollo de Software</span>
+                            <span class="bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-sm font-medium" data-key="skill_automation">Automation</span>
+                            <span class="bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-sm font-medium" data-key="skill_problem_solving">Problem-Solving</span>
+                            <span class="bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-sm font-medium" data-key="skill_process_optimization">Process Optimization</span>
+                            <span class="bg-violet-100 text-violet-800 px-3 py-1 rounded-full text-sm font-medium" data-key="skill_software_dev">Software Development</span>
                         </div>
                     </div>
                 </div>
@@ -153,56 +167,56 @@
         <section id="projects" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-900">En lo que estoy trabajando</h2>
-                    <p class="text-lg text-gray-600 mt-2 max-w-3xl mx-auto">Mi enfoque actual es la creación de herramientas inteligentes que resuelvan problemas reales, fusionando IA con experiencias de usuario intuitivas.</p>
+                    <h2 class="text-4xl font-bold text-gray-900" data-key="projects_title">What I'm Working On</h2>
+                    <p class="text-lg text-gray-600 mt-2 max-w-3xl mx-auto" data-key="projects_subtitle">My current focus is on creating smart tools that solve real problems, merging AI with intuitive user experiences.</p>
                 </div>
                 <div class="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                    <!-- Tarjeta 1: Libros Interactivos -->
+                    <!-- Card 1: Interactive Books -->
                     <div class="group bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
                         <div class="flex-shrink-0">
                             <div class="w-16 h-16 bg-violet-100 rounded-xl flex items-center justify-center mb-6">
                                 <i data-lucide="book-open-check" class="w-8 h-8 text-violet-600"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Generador de Libros Interactivos</h3>
-                            <p class="text-gray-600 mb-6">
-                                Una aplicación que utiliza IA para crear libros personalizados donde la historia evoluciona según las decisiones del lector, convirtiendo el aprendizaje en una aventura única.
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3" data-key="project1_title">Interactive Book Generator</h3>
+                            <p class="text-gray-600 mb-6" data-key="project1_desc">
+                                An application that uses AI to create personalized books where the story evolves based on the reader's decisions, turning learning into a unique adventure.
                             </p>
-                            <p class="text-xs italic text-violet-600 font-medium">
-                                Próximamente disponible en tiendas de apps
+                            <p class="text-xs italic text-violet-600 font-medium" data-key="project_status">
+                                Coming soon to app stores
                             </p>
                         </div>
                         <div class="mt-auto pt-6 border-t border-gray-200">
-                             <p class="text-sm font-semibold text-gray-500 mb-3">Tecnologías Clave:</p>
+                             <p class="text-sm font-semibold text-gray-500 mb-3" data-key="tech_stack_title">Key Technologies:</p>
                              <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">Gemini API</span>
-                                <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">Firebase</span>
-                                <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">Narrativa Adaptativa</span>
+                                 <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">Gemini API</span>
+                                 <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">Firebase</span>
+                                 <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium" data-key="project1_tech3">Adaptive Narrative</span>
                              </div>
                         </div>
                     </div>
 
-                    <!-- Tarjeta 2: LociAI -->
+                    <!-- Card 2: LociAI -->
                     <div class="group bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
                         <div class="flex-shrink-0">
                             <div class="w-16 h-16 bg-violet-100 rounded-xl flex items-center justify-center mb-6">
                                 <i data-lucide="brain-circuit" class="w-8 h-8 text-violet-600"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-3">LociAI (El Palacio de la Memoria)</h3>
-                            <p class="text-gray-600 mb-6">
-                                Mi herramienta para reinventar el aprendizaje, usando IA para construir "palacios de la memoria" digitales y hacer que memorizar conceptos complejos sea tan intuitivo como jugar.
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3" data-key="project2_title">LociAI (The Memory Palace)</h3>
+                            <p class="text-gray-600 mb-6" data-key="project2_desc">
+                                My tool to reinvent learning, using AI to build digital "memory palaces" and making memorizing complex concepts as intuitive as playing a game.
                             </p>
-                             <p class="text-xs italic text-violet-600 font-medium">
-                                Próximamente disponible en tiendas de apps
-                            </p>
+                             <p class="text-xs italic text-violet-600 font-medium" data-key="project_status2">
+                                 Coming soon to app stores
+                             </p>
                         </div>
                          <div class="mt-auto pt-6 border-t border-gray-200">
-                             <p class="text-sm font-semibold text-gray-500 mb-3">Tecnologías Clave:</p>
-                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">IA Generativa</span>
-                                <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">Google Cloud</span>
-                                <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">Mnemotecnia</span>
-                             </div>
-                        </div>
+                              <p class="text-sm font-semibold text-gray-500 mb-3" data-key="tech_stack_title2">Key Technologies:</p>
+                              <div class="flex flex-wrap gap-2">
+                                  <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium" data-key="project2_tech1">Generative AI</span>
+                                  <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium">Google Cloud</span>
+                                  <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-xs font-medium" data-key="project2_tech3">Mnemonics</span>
+                              </div>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -212,18 +226,18 @@
         <section id="experience" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-900">Mi Trayectoria Profesional</h2>
-                    <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">Un viaje de crecimiento constante y adaptación.</p>
+                    <h2 class="text-4xl font-bold text-gray-900" data-key="experience_title">My Professional Journey</h2>
+                    <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto" data-key="experience_subtitle">A path of constant growth and adaptation.</p>
                 </div>
                 <div class="relative timeline max-w-3xl mx-auto">
                     <!-- Item 1 -->
                     <div class="timeline-item mb-8">
                         <div class="timeline-dot"></div>
                         <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-violet-500">
-                            <time class="text-sm font-semibold text-violet-500">Nov 2022 - Presente</time>
+                            <time class="text-sm font-semibold text-violet-500">Nov 2022 - Present</time>
                             <h3 class="text-xl font-bold text-gray-800 mt-1">Process Associate</h3>
                             <p class="text-md font-medium text-gray-600 mb-2">TATA Consultancy Services</p>
-                            <p class="text-gray-500 text-sm">Gestioné una línea especializada de emergencias para situaciones de alto riesgo, aplicando protocolos rigurosos y optimizando la comunicación para proteger activos críticos del cliente.</p>
+                            <p class="text-gray-500 text-sm" data-key="exp1_desc">Managed a specialized emergency line for high-risk situations, applying rigorous protocols and optimizing communication to protect critical client assets.</p>
                         </div>
                     </div>
                     <!-- Item 2 -->
@@ -233,7 +247,7 @@
                             <time class="text-sm font-semibold text-violet-500">Jul 2021 - Sep 2022</time>
                             <h3 class="text-xl font-bold text-gray-800 mt-1">Quality Assurance Specialist</h3>
                             <p class="text-md font-medium text-gray-600 mb-2">Helpware</p>
-                            <p class="text-gray-500 text-sm">Promovido a este rol por mi habilidad para detectar errores críticos en publicaciones y anuncios de clientes, previniendo pérdidas financieras y asegurando la integridad de la información.</p>
+                            <p class="text-gray-500 text-sm" data-key="exp2_desc">Promoted to this role for my ability to detect critical errors in client publications and ads, preventing financial losses and ensuring information integrity.</p>
                         </div>
                     </div>
                      <!-- Item 3 -->
@@ -243,7 +257,7 @@
                             <time class="text-sm font-semibold text-violet-500">Feb 2020 - Jun 2020</time>
                             <h3 class="text-xl font-bold text-gray-800 mt-1">Drywall Finishing Technician</h3>
                             <p class="text-md font-medium text-gray-600 mb-2">Gearo</p>
-                            <p class="text-gray-500 text-sm">Ejecución de todas las fases de acabado de paneles de yeso, incluyendo aplicación de estuco veneciano decorativo.</p>
+                            <p class="text-gray-500 text-sm" data-key="exp3_desc">Executed all phases of drywall finishing, including the application of decorative Venetian plaster.</p>
                         </div>
                     </div>
                     <!-- Item 4 -->
@@ -251,9 +265,9 @@
                         <div class="timeline-dot"></div>
                         <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-violet-500">
                             <time class="text-sm font-semibold text-violet-500">Sep 2016 - Feb 2020</time>
-                            <h3 class="text-xl font-bold text-gray-800 mt-1">Coordinador de Voluntariado</h3>
-                            <p class="text-md font-medium text-gray-600 mb-2">Helsinki, Finlandia</p>
-                            <p class="text-gray-500 text-sm">Organicé y presidí reuniones y eventos comunitarios para una asociación de ayuda a personas en situación desfavorable, coordinando la logística y la comunicación.</p>
+                            <h3 class="text-xl font-bold text-gray-800 mt-1" data-key="exp4_title">Volunteer Coordinator</h3>
+                            <p class="text-md font-medium text-gray-600 mb-2">Helsinki, Finland</p>
+                            <p class="text-gray-500 text-sm" data-key="exp4_desc">Organized and chaired community meetings and events for an association aiding disadvantaged individuals, coordinating logistics and communication.</p>
                         </div>
                     </div>
                     <!-- Item 5 -->
@@ -262,8 +276,8 @@
                         <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-violet-500">
                             <time class="text-sm font-semibold text-violet-500">2014 - 2016</time>
                             <h3 class="text-xl font-bold text-gray-800 mt-1">General Construction Labourer</h3>
-                            <p class="text-md font-medium text-gray-600 mb-2">Varios Proyectos</p>
-                            <p class="text-gray-500 text-sm">Labores generales de construcción, manejo de materiales, preparación y limpieza de sitios, y asistencia en demolición.</p>
+                            <p class="text-md font-medium text-gray-600 mb-2" data-key="exp5_location">Various Projects</p>
+                            <p class="text-gray-500 text-sm" data-key="exp5_desc">General construction tasks, material handling, site preparation and cleanup, and assistance in demolition.</p>
                         </div>
                     </div>
                 </div>
@@ -274,8 +288,8 @@
         <section id="education" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-900">Formación Académica</h2>
-                    <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">Mi base técnica y mi presente en la tecnología.</p>
+                    <h2 class="text-4xl font-bold text-gray-900" data-key="education_title">Academic Background</h2>
+                    <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto" data-key="education_subtitle">My technical foundation and my present in technology.</p>
                 </div>
                 <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
                     <!-- University -->
@@ -284,22 +298,22 @@
                             <i data-lucide="school" class="w-8 h-8 text-violet-600"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-1">Licenciatura en Tecnologías de la Información</h3>
+                            <h3 class="text-xl font-bold text-gray-900 mb-1" data-key="edu1_title">Bachelor's in Information Technologies</h3>
                             <p class="text-md font-medium text-gray-600">Universidad de Guadalajara</p>
-                            <p class="text-sm text-gray-500 mt-2">Actualmente cursando</p>
+                            <p class="text-sm text-gray-500 mt-2" data-key="edu1_status">Currently enrolled</p>
                         </div>
                     </div>
                     <!-- Technical Degree -->
                      <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 flex items-start space-x-6">
-                        <div class="flex-shrink-0 w-16 h-16 bg-violet-100 rounded-xl flex items-center justify-center">
-                            <i data-lucide="award" class="w-8 h-8 text-violet-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-1">Profesional Técnico Bachiller en Refrigeración y Aire Acondicionado</h3>
-                            <p class="text-md font-medium text-gray-600">CONALEP</p>
-                            <p class="text-sm text-gray-500 mt-2">Graduado</p>
-                        </div>
-                    </div>
+                         <div class="flex-shrink-0 w-16 h-16 bg-violet-100 rounded-xl flex items-center justify-center">
+                             <i data-lucide="award" class="w-8 h-8 text-violet-600"></i>
+                         </div>
+                         <div>
+                             <h3 class="text-xl font-bold text-gray-900 mb-1" data-key="edu2_title">Technical Degree in Refrigeration and Air Conditioning</h3>
+                             <p class="text-md font-medium text-gray-600">CONALEP</p>
+                             <p class="text-sm text-gray-500 mt-2" data-key="edu2_status">Graduated</p>
+                         </div>
+                     </div>
                 </div>
             </div>
         </section>
@@ -307,12 +321,12 @@
         <!-- Contact Section -->
         <section id="contact" class="py-20 bg-gray-900 text-white">
             <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-4xl font-bold mb-4">Hablemos</h2>
-                 <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
-                     Estoy abierto a oportunidades de colaboración, roles desafiantes o simplemente una buena conversación sobre tecnología y automatización.
+                 <h2 class="text-4xl font-bold mb-4" data-key="contact_title">Let's Talk</h2>
+                 <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10" data-key="contact_subtitle">
+                     I'm open to collaboration opportunities, challenging roles, or just a good conversation about technology and automation.
                  </p>
-                 <a href="mailto:gamau9312@gmail.com" class="bg-violet-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-violet-600 transition-transform hover:scale-105 shadow-lg shadow-violet-500/30 inline-block">
-                     Envíame un correo
+                 <a href="mailto:gamau9312@gmail.com" class="bg-violet-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-violet-600 transition-transform hover:scale-105 shadow-lg shadow-violet-500/30 inline-block" data-key="contact_cta">
+                     Send me an email
                  </a>
                  <div class="flex justify-center space-x-8 mt-12">
                      <a href="https://www.linkedin.com/in/gamaliel-uribe-bernal" target="_blank" class="text-gray-400 hover:text-violet-400 transition-colors">
@@ -331,34 +345,205 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-center py-6">
-        <p class="text-gray-500">&copy; 2025 Gamaliel Uribe Bernal. Diseñado y construido con pasión.</p>
+        <p class="text-gray-500" data-key="footer_text">&copy; 2025 Gamaliel Uribe Bernal. Designed and built with passion.</p>
     </footer>
 
     <script>
-        // Iconos de Lucide
+        const translations = {
+            en: {
+                page_title: "Gamaliel Uribe Bernal | Operations & Technology Specialist",
+                nav_about: "About Me",
+                nav_projects: "Projects",
+                nav_experience: "Experience",
+                nav_education: "Education",
+                nav_contact: "Contact",
+                nav_about_mobile: "About Me",
+                nav_projects_mobile: "Projects",
+                nav_experience_mobile: "Experience",
+                nav_education_mobile: "Education",
+                nav_contact_mobile: "Contact",
+                hero_intro: "I connect operations, processes, and technology to create efficient solutions. My journey from construction to software development has given me a unique perspective on solving complex problems.",
+                hero_cta_projects: "View My Projects",
+                about_title: "A Fusion of Logic and Creativity",
+                about_p1: "My career is a story of evolution. I started in construction, where I learned the value of hard work and real-world problem-solving. That practical foundation, combined with nearly **5 years of customer service experience**, propelled me into the tech sector, where I have optimized operations, managed critical incidents, and ensured quality at companies like TCS and Helpware.",
+                about_p2: "Currently, as an Information Technologies student, I am channeling all that experience into software development and process automation. I am passionate about creating tools that not only work but make people's lives easier. Besides coding, I am a passionate singer (baritone) and painter.",
+                skill_automation: "Automation",
+                skill_problem_solving: "Problem-Solving",
+                skill_process_optimization: "Process Optimization",
+                skill_software_dev: "Software Development",
+                projects_title: "What I'm Working On",
+                projects_subtitle: "My current focus is on creating smart tools that solve real problems, merging AI with intuitive user experiences.",
+                project1_title: "Interactive Book Generator",
+                project1_desc: "An application that uses AI to create personalized books where the story evolves based on the reader's decisions, turning learning into a unique adventure.",
+                project_status: "Coming soon to app stores",
+                project_status2: "Coming soon to app stores",
+                tech_stack_title: "Key Technologies:",
+                tech_stack_title2: "Key Technologies:",
+                project1_tech3: "Adaptive Narrative",
+                project2_title: "LociAI (The Memory Palace)",
+                project2_desc: "My tool to reinvent learning, using AI to build digital \"memory palaces\" and making memorizing complex concepts as intuitive as playing a game.",
+                project2_tech1: "Generative AI",
+                project2_tech3: "Mnemonics",
+                experience_title: "My Professional Journey",
+                experience_subtitle: "A path of constant growth and adaptation.",
+                exp1_desc: "Managed a specialized emergency line for high-risk situations, applying rigorous protocols and optimizing communication to protect critical client assets.",
+                exp2_desc: "Promoted to this role for my ability to detect critical errors in client publications and ads, preventing financial losses and ensuring information integrity.",
+                exp3_desc: "Executed all phases of drywall finishing, including the application of decorative Venetian plaster.",
+                exp4_title: "Volunteer Coordinator",
+                exp4_desc: "Organized and chaired community meetings and events for an association aiding disadvantaged individuals, coordinating logistics and communication.",
+                exp5_location: "Various Projects",
+                exp5_desc: "General construction tasks, material handling, site preparation and cleanup, and assistance in demolition.",
+                education_title: "Academic Background",
+                education_subtitle: "My technical foundation and my present in technology.",
+                edu1_title: "Bachelor's in Information Technologies",
+                edu1_status: "Currently enrolled",
+                edu2_title: "Technical Degree in Refrigeration and Air Conditioning",
+                edu2_status: "Graduated",
+                contact_title: "Let's Talk",
+                contact_subtitle: "I'm open to collaboration opportunities, challenging roles, or just a good conversation about technology and automation.",
+                contact_cta: "Send me an email",
+                footer_text: "© 2025 Gamaliel Uribe Bernal. Designed and built with passion.",
+            },
+            es: {
+                page_title: "Gamaliel Uribe Bernal | Especialista en Operaciones y Tecnología",
+                nav_about: "Sobre mí",
+                nav_projects: "Proyectos",
+                nav_experience: "Experiencia",
+                nav_education: "Educación",
+                nav_contact: "Contacto",
+                nav_about_mobile: "Sobre mí",
+                nav_projects_mobile: "Proyectos",
+                nav_experience_mobile: "Experiencia",
+                nav_education_mobile: "Educación",
+                nav_contact_mobile: "Contacto",
+                hero_intro: "Conecto operaciones, procesos y tecnología para crear soluciones eficientes. Mi viaje desde la construcción hasta el desarrollo de software me ha dado una perspectiva única para resolver problemas complejos.",
+                hero_cta_projects: "Ver mis Proyectos",
+                about_title: "Una fusión de Lógica y Creatividad",
+                about_p1: "Mi carrera es una historia de evolución. Empecé en la construcción, donde aprendí el valor del trabajo duro y la resolución de problemas en el mundo real. Esa base práctica, combinada con casi **5 años de experiencia en servicio al cliente**, me impulsó hacia el sector tecnológico, donde he optimizado operaciones, gestionado incidentes críticos y garantizado la calidad en empresas como TCS y Helpware.",
+                about_p2: "Actualmente, como estudiante de Tecnologías de la Información, estoy canalizando toda esa experiencia en el desarrollo de software y la automatización de procesos. Me apasiona crear herramientas que no solo funcionen, sino que hagan la vida de las personas más fácil. Además de programar, soy un apasionado del canto (barítono) y la pintura.",
+                skill_automation: "Automatización",
+                skill_problem_solving: "Resolución de Problemas",
+                skill_process_optimization: "Optimización de Procesos",
+                skill_software_dev: "Desarrollo de Software",
+                projects_title: "En lo que estoy trabajando",
+                projects_subtitle: "Mi enfoque actual es la creación de herramientas inteligentes que resuelvan problemas reales, fusionando IA con experiencias de usuario intuitivas.",
+                project1_title: "Generador de Libros Interactivos",
+                project1_desc: "Una aplicación que utiliza IA para crear libros personalizados donde la historia evoluciona según las decisiones del lector, convirtiendo el aprendizaje en una aventura única.",
+                project_status: "Próximamente disponible en tiendas de apps",
+                project_status2: "Próximamente disponible en tiendas de apps",
+                tech_stack_title: "Tecnologías Clave:",
+                tech_stack_title2: "Tecnologías Clave:",
+                project1_tech3: "Narrativa Adaptativa",
+                project2_title: "LociAI (El Palacio de la Memoria)",
+                project2_desc: "Mi herramienta para reinventar el aprendizaje, usando IA para construir \"palacios de la memoria\" digitales y hacer que memorizar conceptos complejos sea tan intuitivo como jugar.",
+                project2_tech1: "IA Generativa",
+                project2_tech3: "Mnemotecnia",
+                experience_title: "Mi Trayectoria Profesional",
+                experience_subtitle: "Un viaje de crecimiento constante y adaptación.",
+                exp1_desc: "Gestioné una línea especializada de emergencias para situaciones de alto riesgo, aplicando protocolos rigurosos y optimizando la comunicación para proteger activos críticos del cliente.",
+                exp2_desc: "Promovido a este rol por mi habilidad para detectar errores críticos en publicaciones y anuncios de clientes, previniendo pérdidas financieras y asegurando la integridad de la información.",
+                exp3_desc: "Ejecución de todas las fases de acabado de paneles de yeso, incluyendo aplicación de estuco veneciano decorativo.",
+                exp4_title: "Coordinador de Voluntariado",
+                exp4_desc: "Organicé y presidí reuniones y eventos comunitarios para una asociación de ayuda a personas en situación desfavorable, coordinando la logística y la comunicación.",
+                exp5_location: "Varios Proyectos",
+                exp5_desc: "Labores generales de construcción, manejo de materiales, preparación y limpieza de sitios, y asistencia en demolición.",
+                education_title: "Formación Académica",
+                education_subtitle: "Mi base técnica y mi presente en la tecnología.",
+                edu1_title: "Licenciatura en Tecnologías de la Información",
+                edu1_status: "Actualmente cursando",
+                edu2_title: "Profesional Técnico Bachiller en Refrigeración y Aire Acondicionado",
+                edu2_status: "Graduado",
+                contact_title: "Hablemos",
+                contact_subtitle: "Estoy abierto a oportunidades de colaboración, roles desafiantes o simplemente una buena conversación sobre tecnología y automatización.",
+                contact_cta: "Envíame un correo",
+                footer_text: "© 2025 Gamaliel Uribe Bernal. Diseñado y construido con pasión.",
+            }
+        };
+
+        const typingTexts = {
+            en: [
+                "Operations Specialist",
+                "Process Automation",
+                "Software Developer",
+                "Problem Solver"
+            ],
+            es: [
+                "Especialista en Operaciones",
+                "Automatización de Procesos",
+                "Desarrollador de Software",
+                "Solucionador de Problemas"
+            ]
+        };
+        
+        // --- Language Switcher Logic ---
+        const setLanguage = (lang) => {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                     // Check for keys that contain HTML and set innerHTML instead of textContent
+                    if (key === 'about_p1' || key === 'about_p2') {
+                         element.innerHTML = translations[lang][key];
+                    } else {
+                         element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update page title
+            document.title = translations[lang].page_title;
+
+            // Update typing effect texts and restart it
+            textsToType = typingTexts[lang];
+            resetTypingEffect();
+
+            // Update active button styles
+            const allLangButtons = document.querySelectorAll('.lang-btn');
+            allLangButtons.forEach(btn => {
+                btn.classList.remove('lang-active', 'text-gray-500');
+                if (btn.id.includes(lang)) {
+                    btn.classList.add('lang-active');
+                } else {
+                    btn.classList.add('text-gray-500');
+                }
+            });
+        };
+
+        document.querySelectorAll('.lang-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const lang = event.target.id.includes('en') ? 'en' : 'es';
+                setLanguage(lang);
+            });
+        });
+
+        // --- Lucide Icons ---
         lucide.createIcons();
 
-        // Menu móvil
+        // --- Mobile Menu ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Efecto de tipeo en el Hero
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- Typing Effect ---
         const typingTextElement = document.getElementById('typing-text');
-        const textsToType = [
-            "Especialista en Operaciones",
-            "Automatización de Procesos",
-            "Desarrollador de Software",
-            "Solucionador de Problemas"
-        ];
+        let textsToType = []; // Will be populated by setLanguage
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
+        let typeTimeout;
 
         function type() {
+            clearTimeout(typeTimeout);
             const currentText = textsToType[textIndex];
+            
             if (isDeleting) {
                 typingTextElement.textContent = currentText.substring(0, charIndex - 1);
                 charIndex--;
@@ -368,25 +553,30 @@
             }
 
             if (!isDeleting && charIndex === currentText.length) {
-                setTimeout(() => isDeleting = true, 2000);
+                typeTimeout = setTimeout(() => isDeleting = true, 2000);
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 textIndex = (textIndex + 1) % textsToType.length;
             }
 
             const typingSpeed = isDeleting ? 100 : 150;
-            setTimeout(type, typingSpeed);
+            typeTimeout = setTimeout(type, typingSpeed);
         }
 
-        document.addEventListener('DOMContentLoaded', type);
-        
-        // Cierre del menú móvil al hacer clic en un enlace
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+        function resetTypingEffect() {
+            clearTimeout(typeTimeout);
+            textIndex = 0;
+            charIndex = 0;
+            isDeleting = false;
+            typingTextElement.textContent = '';
+            type();
+        }
+
+        // --- Initial Load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage('en'); // Set default language to English
         });
+
     </script>
 </body>
 </html>
-
